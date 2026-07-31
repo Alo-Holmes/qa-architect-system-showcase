@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { PortfolioPage } from '../src/pages/portfolioPage';
+import { openPortfolio } from './helpers/portfolioTestHelper';
 
 test.describe('portfolio navigation', () => {
   test('exposes main navigation and allows section discovery', async ({ page }) => {
     const portfolio = new PortfolioPage(page);
 
-    await portfolio.goto();
+    await openPortfolio(page);
 
     await expect(portfolio.navigationLinks.first()).toBeVisible();
 
@@ -17,7 +18,7 @@ test.describe('portfolio navigation', () => {
   test('supports anchor-based section access when present', async ({ page }) => {
     const portfolio = new PortfolioPage(page);
 
-    await portfolio.goto();
+    await openPortfolio(page);
 
     const anchors = page.locator('a[href*="#"]');
     if (await anchors.count()) {
