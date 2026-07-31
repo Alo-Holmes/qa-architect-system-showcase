@@ -6,7 +6,8 @@
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "mock:server": "node server/mockServer.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
