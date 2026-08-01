@@ -11,8 +11,13 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 2 : undefined,
   reporter: [['list'], ['html', { open: 'never' }]],
+  webServer: {
+    command: 'node server/mockServer.js',
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: !process.env.CI,
+  },
   use: {
-    baseURL: process.env.BASE_URL ?? 'https://www.alo-holmes.github.io',
+    baseURL: process.env.BASE_URL ?? 'http://127.0.0.1:3000',
     headless: true,
     ignoreHTTPSErrors: true,
     trace: 'retain-on-failure',

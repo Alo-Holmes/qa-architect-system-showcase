@@ -8,7 +8,7 @@ test.describe('contact and CV requirements', () => {
 
     await openPortfolio(page);
 
-    const cvLink = page.locator('a[href*=".pdf"], a[href*="cv" i]').first();
+    const cvLink = page.getByRole('link', { name: /download cv/i }).first();
     await expect(cvLink).toBeVisible();
   });
 
@@ -18,10 +18,6 @@ test.describe('contact and CV requirements', () => {
     await openPortfolio(page);
 
     const contactLinks = page.locator('a[href]');
-    await expect(contactLinks.first()).toBeVisible();
-
-    const allLinks = await contactLinks.allTextContents();
-    const joined = allLinks.join(' ').toLowerCase();
-    expect(joined).toMatch(/github|linkedin|whatsapp|email|cv|contact/i);
+    await expect(contactLinks.filter({ hasText: /linkedin|github|whatsapp/i }).first()).toBeVisible();
   });
 });

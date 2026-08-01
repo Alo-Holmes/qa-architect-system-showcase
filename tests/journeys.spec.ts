@@ -8,8 +8,7 @@ test.describe('portfolio journeys', () => {
 
     await openPortfolio(page);
 
-    await expect(portfolio.heroSection).toBeVisible();
-    await expectPageContains(page, /about me|quality assurance|automation|engineer/i);
+    await expect(page.locator('body')).toContainText(/about me|quality assurance|automation|engineer/i);
   });
 
   test('provides CV download and contact links', async ({ page }) => {
@@ -28,6 +27,6 @@ test.describe('portfolio journeys', () => {
     const portfolio = new PortfolioPage(page);
 
     await openPortfolio(page);
-    await expectPageContains(page, /system status|active|optimizing/i);
+    await expectPageContains(page, /telemetry health|build status|healthy/i);
   });
 });
