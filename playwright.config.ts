@@ -12,7 +12,7 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: process.env.BASE_URL ?? 'https://www.alo-holmes.github.io',
+    baseURL: process.env.BASE_URL ?? 'https://alo-holmes.github.io/',
     headless: true,
     ignoreHTTPSErrors: true,
     trace: 'retain-on-failure',
