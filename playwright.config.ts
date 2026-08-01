@@ -10,9 +10,13 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 2 : undefined,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'test-results/results.json' }]
+  ],
   use: {
-    baseURL: process.env.BASE_URL ?? 'https://alo-holmes.github.io/',
+    baseURL: process.env.BASE_URL ?? 'http://127.0.0.1:3000',
     headless: true,
     ignoreHTTPSErrors: true,
     trace: 'retain-on-failure',
@@ -25,4 +29,10 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
+  webServer: {
+    command: 'npm run mock:server',
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: !process.env.CI,
+    timeout: 10_000,
+  },
 });

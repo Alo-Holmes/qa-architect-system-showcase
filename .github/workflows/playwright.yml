@@ -16,4 +16,23 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npx playwright test
+      - name: Run Playwright tests
+        run: npx playwright test
+        continue-on-error: true
+      - name: Process Test Results & AI Triage
+        run: npm run process:results
+        if: always()
+      - name: Upload AI Bug Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-bug-report
+          path: test-results/ai-bug-report.md
+          if-no-files-found: ignore
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

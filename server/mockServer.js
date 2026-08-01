@@ -43,8 +43,8 @@ const html = `<!doctype html>
         <a href="mailto:example@example.com">Email</a>
       </section>
       <section id="telemetry">
-        <h2>Telemetry Health</h2>
-        <div>Build status: Healthy</div>
+        <h2>System Status</h2>
+        <div>Build status: Active</div>
         <div>Last check: 2026-07-31</div>
       </section>
     </main>
