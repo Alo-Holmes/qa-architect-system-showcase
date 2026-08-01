@@ -9,7 +9,7 @@ test.describe('portfolio journeys', () => {
     await openPortfolio(page);
 
     await expect(portfolio.heroSection).toBeVisible();
-    await expectPageContains(page, /profile|experience|skills|career|engineer/i);
+    await expectPageContains(page, /about me|quality assurance|automation|engineer/i);
   });
 
   test('provides CV download and contact links', async ({ page }) => {
@@ -17,17 +17,17 @@ test.describe('portfolio journeys', () => {
 
     await openPortfolio(page);
 
-    const cvLink = page.locator('a[href*=".pdf"], a[href*="cv" i]').first();
+    const cvLink = page.getByRole('link', { name: /download cv/i }).first();
     await expect(cvLink).toBeVisible();
 
     const contactLinks = page.locator('a[href]');
-    await expect(contactLinks.first()).toBeVisible();
+    await expect(contactLinks.filter({ hasText: /linkedin|github|whatsapp/i }).first()).toBeVisible();
   });
 
   test('renders telemetry health information when present', async ({ page }) => {
     const portfolio = new PortfolioPage(page);
 
     await openPortfolio(page);
-    await expectPageContains(page, /telemetry|status|build|health/i);
+    await expectPageContains(page, /system status|active|optimizing/i);
   });
 });

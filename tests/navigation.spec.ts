@@ -8,11 +8,12 @@ test.describe('portfolio navigation', () => {
 
     await openPortfolio(page);
 
-    await expect(portfolio.navigationLinks.first()).toBeVisible();
+    const navLinks = page.locator('a[href]');
+    await expect(navLinks.first()).toBeVisible();
 
-    const navLabels = await portfolio.navigationLinks.allTextContents();
-    const joinedLabels = navLabels.join(' ').toLowerCase();
-    expect(joinedLabels).toMatch(/about|profile|experience|contact|cv|telemetry/i);
+    const linkTexts = await navLinks.allTextContents();
+    const joinedLabels = linkTexts.join(' ').toLowerCase();
+    expect(joinedLabels).toMatch(/download cv|linkedin|github|whatsapp|about me|key-projects|demos/i);
   });
 
   test('supports anchor-based section access when present', async ({ page }) => {
@@ -21,7 +22,8 @@ test.describe('portfolio navigation', () => {
     await openPortfolio(page);
 
     const anchors = page.locator('a[href*="#"]');
-    if (await anchors.count()) {
+    const count = await anchors.count();
+    if (count > 0) {
       await expect(anchors.first()).toBeVisible();
     }
   });
