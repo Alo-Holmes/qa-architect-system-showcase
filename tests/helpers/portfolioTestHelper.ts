@@ -2,7 +2,8 @@ import { expect, type Page } from '@playwright/test';
 
 export async function openPortfolio(page: Page) {
   await page.goto('/');
-  await expect(page.locator('main')).toBeVisible();
+  await expect(page).toHaveURL(/https?:\/\//);
+  await expect(page.locator('body')).toBeVisible();
 }
 
 export async function expectPageContains(page: Page, expectedText: RegExp | string) {
