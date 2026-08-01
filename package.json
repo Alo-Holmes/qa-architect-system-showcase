@@ -5,6 +5,8 @@
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
+    "test:manual": "playwright test --grep @manual-case",
+    "test:smoke": "playwright test --grep @smoke",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
     "mock:server": "node server/mockServer.js",
