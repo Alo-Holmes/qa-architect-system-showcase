@@ -19,6 +19,6 @@ test.describe('manual-case profile discovery', () => {
 
   test('TC-009 review professional testimonials @manual-case @manual-case-profile', async ({ page }) => {
     await openPortfolio(page);
-    await expect(page.locator('body')).toContainText(/professional profile|career history|contact/i);
+    await expect(page.locator('body')).toContainText(/about me?|professional experience|contact/i);
   });
 });

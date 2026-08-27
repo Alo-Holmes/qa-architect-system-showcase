@@ -16,7 +16,8 @@ export default defineConfig({
     ['json', { outputFile: 'test-results/results.json' }],
   ],
   use: {
-    baseURL: process.env.BASE_URL ?? 'http://127.0.0.1:3000',
+    baseURL: process.env.BASE_URL ?? 'https://alo-holmes.github.io',
+    //mock server URL: http://127.0.0.1:3000
     headless: true,
     ignoreHTTPSErrors: true,
     trace: 'retain-on-failure',
