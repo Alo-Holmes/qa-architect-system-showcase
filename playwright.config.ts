@@ -1,5 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const testTarget = process.env.TEST_TARGET ?? 'mock';
+if (testTarget !== 'mock' && testTarget !== 'live') {
+  throw new Error(`TEST_TARGET must be either "mock" or "live", received "${testTarget}"`);
+}
+
+const useMockServer = testTarget === 'mock';
+
 export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
@@ -16,8 +23,7 @@ export default defineConfig({
     ['json', { outputFile: 'test-results/results.json' }],
   ],
   use: {
-    baseURL: process.env.BASE_URL ?? 'https://alo-holmes.github.io',
-    //mock server URL: http://127.0.0.1:3000
+    baseURL: process.env.BASE_URL ?? (useMockServer ? 'http://127.0.0.1:3000' : 'https://alo-holmes.github.io'),
     headless: true,
     ignoreHTTPSErrors: true,
     trace: 'retain-on-failure',
@@ -30,10 +36,12 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: {
-    command: 'npm run mock:server',
-    url: 'http://127.0.0.1:3000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 10_000,
-  },
+  webServer: useMockServer
+    ? {
+        command: 'npm run mock:server',
+        url: 'http://127.0.0.1:3000',
+        reuseExistingServer: !process.env.CI,
+        timeout: 10_000,
+      }
+    : undefined,
 });

@@ -31,6 +31,11 @@ const html = `<!doctype html>
         <h2>Career History</h2>
         <p>Delivered quality automation, architecture leadership, and reliable delivery.</p>
       </section>
+      <section id="testimonials">
+        <h2>What Peers &amp; Leaders Say</h2>
+        <p>Direct feedback gathered from QA specialists, software engineers, and development architects.</p>
+        <blockquote>I've worked with Angelo and value his QA leadership, technical depth, and collaborative approach.</blockquote>
+      </section>
       <section id="cv">
         <h2>Curriculum Vitae</h2>
         <a href="/cv.pdf">Download CV</a>

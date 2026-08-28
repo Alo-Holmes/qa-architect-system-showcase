@@ -1,0 +1,433 @@
+# Business Requirements Specification (BRS)
+
+**Project:** Personal Portfolio Website
+**Version:** 1.0
+**Author:** QA Solutions Architect
+**Document Type:** Business Requirements Specification (BRS)
+**Status:** Draft
+
+---
+
+# 1. Purpose
+
+The purpose of this website is to provide a professional online portfolio that showcases the owner's technical experience, software quality expertise, engineering capabilities, and professional achievements.
+
+The website serves as both a personal brand and a demonstrable software product, allowing prospective employers, recruiters, hiring managers, technical interviewers, collaborators, and peers to evaluate the owner's skills through both the presented content and the quality of the application itself.
+
+---
+
+# 2. Business Objectives
+
+The website shall:
+
+* Present a professional first impression.
+* Showcase the owner's experience and technical capabilities.
+* Demonstrate modern software engineering and QA practices.
+* Provide quick access to the owner's curriculum vitae.
+* Enable visitors to contact the owner using multiple communication channels.
+* Demonstrate active software development through live project telemetry.
+* Maintain a professional experience across desktop and mobile devices.
+
+---
+
+# 3. Stakeholders
+
+| Stakeholder            | Interest                                              |
+| ---------------------- | ----------------------------------------------------- |
+| Portfolio Owner        | Present professional profile and technical capability |
+| Recruiters             | Quickly assess candidate suitability                  |
+| Hiring Managers        | Review experience and qualifications                  |
+| Technical Interviewers | Evaluate engineering maturity                         |
+| Software Engineers     | Review projects and technical interests               |
+| Potential Clients      | Evaluate professional credibility                     |
+
+---
+
+# 4. In Scope
+
+The current release includes:
+
+* Professional profile
+* Skills overview
+* Career history
+* Testimonials
+* Live project telemetry
+* Curriculum Vitae download
+* External professional links
+* Responsive layout
+* Modern visual presentation
+
+---
+
+# 5. Out of Scope
+
+The following capabilities are not included in this release:
+
+* User authentication
+* User accounts
+* Contact form submission
+* Content management system
+* Blog functionality
+* Search functionality
+* Administrative portal
+
+---
+
+# 6. Business Requirements
+
+---
+
+## BR-001 Portfolio Availability
+
+### Business Goal
+
+Visitors shall be able to access the portfolio website using a modern web browser.
+
+### Business Value
+
+The website must always be available to represent the owner's professional profile.
+
+### Acceptance Criteria
+
+* Homepage loads successfully.
+* No blocking errors are presented.
+* Primary content is displayed.
+* Navigation is available.
+* The website is usable on desktop and mobile devices.
+
+---
+
+## BR-002 Website Navigation
+
+### Business Goal
+
+Visitors shall be able to navigate to each major section of the portfolio.
+
+### Business Value
+
+Users should locate information with minimal effort.
+
+### Acceptance Criteria
+
+* Navigation links are visible.
+* Navigation directs users to the correct section.
+* No navigation link is broken.
+* Users can easily return to the top of the page.
+
+---
+
+## BR-003 Professional Profile
+
+### Business Goal
+
+Visitors shall be able to understand the owner's professional identity.
+
+### Business Value
+
+The profile should communicate experience and expertise within a short browsing session.
+
+### Acceptance Criteria
+
+The portfolio presents:
+
+* Professional introduction
+* Current role
+* Location
+* Professional summary
+* Career overview
+
+---
+
+## BR-004 Skills Presentation
+
+### Business Goal
+
+Visitors shall be able to review the owner's technical competencies.
+
+### Business Value
+
+Recruiters and interviewers should quickly determine technical alignment.
+
+### Acceptance Criteria
+
+Skills are organised into logical categories including:
+
+* Testing
+* Test Automation
+* API Testing
+* Performance Testing
+* DevOps
+* Programming Languages
+* CI/CD
+* AI Engineering
+* Quality Engineering
+
+No content overlaps or becomes unreadable.
+
+---
+
+## BR-005 Career Experience
+
+### Business Goal
+
+Visitors shall be able to review previous employment history.
+
+### Business Value
+
+Professional experience should be easy to scan.
+
+### Acceptance Criteria
+
+* Experience is presented chronologically.
+* Employer information is displayed.
+* Role titles are displayed.
+* Career timeline is readable.
+
+---
+
+## BR-006 Testimonials
+
+### Business Goal
+
+Visitors shall be able to review professional recommendations.
+
+### Business Value
+
+Testimonials increase professional credibility.
+
+### Acceptance Criteria
+
+* Testimonials are displayed.
+* Attribution is visible.
+* Content is readable.
+* Layout remains consistent.
+
+---
+
+## BR-007 Curriculum Vitae
+
+### Business Goal
+
+Visitors shall be able to obtain the latest curriculum vitae.
+
+### Business Value
+
+Recruiters should obtain the CV within a single interaction.
+
+### Acceptance Criteria
+
+* CV download option is clearly visible.
+* Download succeeds.
+* Latest document is provided.
+* Download link is functional.
+
+---
+
+## BR-008 Contact Methods
+
+### Business Goal
+
+Visitors shall be able to contact the portfolio owner.
+
+### Business Value
+
+Reduce friction when initiating professional conversations.
+
+### Acceptance Criteria
+
+The website provides access to:
+
+* Email
+* WhatsApp
+* LinkedIn
+
+Each destination opens successfully.
+
+---
+
+## BR-009 GitHub Profile
+
+### Business Goal
+
+Technical visitors shall be able to review public software projects.
+
+### Business Value
+
+Demonstrate practical engineering capability.
+
+### Acceptance Criteria
+
+* GitHub profile link is available.
+* Correct profile opens.
+* Repository access is available.
+
+---
+
+## BR-010 Live Project Telemetry
+
+### Business Goal
+
+Visitors shall be able to determine whether showcased software projects are actively maintained.
+
+### Business Value
+
+Demonstrates engineering maturity, automation capability, and operational transparency.
+
+### Acceptance Criteria
+
+* Telemetry section is visible.
+* Each monitored project displays a current status.
+* Status information is understandable.
+* Links to build information are available when applicable.
+* If telemetry information cannot be retrieved, the interface communicates that status is currently unavailable.
+
+---
+
+## BR-011 Responsive Layout
+
+### Business Goal
+
+The portfolio shall provide a consistent experience across devices.
+
+### Business Value
+
+Users frequently access portfolios from mobile devices.
+
+### Acceptance Criteria
+
+* Layout adapts to screen size.
+* No horizontal scrolling is required.
+* Content remains readable.
+* Images remain correctly positioned.
+* Interactive elements remain accessible.
+
+---
+
+## BR-012 Bento Card Layout
+
+### Business Goal
+
+Information shall be presented using a structured card-based layout.
+
+### Business Value
+
+Improves readability and allows users to scan information efficiently.
+
+### Acceptance Criteria
+
+* Information is grouped into logical cards.
+* Cards maintain consistent spacing.
+* Cards remain aligned.
+* Layout preserves visual hierarchy.
+
+---
+
+## BR-013 External Resources
+
+### Business Goal
+
+Visitors shall be able to access external professional resources.
+
+### Business Value
+
+Supporting evidence should be readily available.
+
+### Acceptance Criteria
+
+External links include:
+
+* GitHub
+* LinkedIn
+* WhatsApp
+* Email
+* Curriculum Vitae
+
+Each destination is reachable.
+
+---
+
+# 7. Business Rules
+
+| Rule ID   | Business Rule                                                                                                |
+| --------- | ------------------------------------------------------------------------------------------------------------ |
+| BRULE-001 | Only current professional information shall be displayed.                                                    |
+| BRULE-002 | External links shall direct users to the intended destination.                                               |
+| BRULE-003 | Professional documents shall always reference the latest published version.                                  |
+| BRULE-004 | Telemetry shall never present misleading status information.                                                 |
+| BRULE-005 | When telemetry cannot be determined, an unavailable state shall be displayed instead of an incorrect status. |
+| BRULE-006 | The website shall remain usable on desktop and mobile devices.                                               |
+
+---
+
+# 8. Requirements Traceability Matrix
+
+| Requirement | Business Capability  | Planned Playwright Test |
+| ----------- | -------------------- | ----------------------- |
+| BR-001      | Site Availability    | availability.spec.ts    |
+| BR-002      | Navigation           | navigation.spec.ts      |
+| BR-003      | Professional Profile | profile.spec.ts         |
+| BR-004      | Skills               | skills.spec.ts          |
+| BR-005      | Experience           | experience.spec.ts      |
+| BR-006      | Testimonials         | testimonials.spec.ts    |
+| BR-007      | CV Download          | cv-download.spec.ts     |
+| BR-008      | Contact Methods      | contact-links.spec.ts   |
+| BR-009      | GitHub Profile       | github-links.spec.ts    |
+| BR-010      | Telemetry            | telemetry.spec.ts       |
+| BR-011      | Responsive Behaviour | responsive.spec.ts      |
+| BR-012      | Bento Layout         | layout.spec.ts          |
+| BR-013      | External Resources   | external-links.spec.ts  |
+
+---
+
+# 9. Non-Functional Requirements
+
+| ID      | Requirement                                                                                                                         |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| NFR-001 | Website shall be available using modern desktop and mobile browsers.                                                                |
+| NFR-002 | Pages should load within acceptable user expectations under normal network conditions.                                              |
+| NFR-003 | The interface shall remain responsive across supported screen sizes.                                                                |
+| NFR-004 | Broken internal links shall not exist.                                                                                              |
+| NFR-005 | External links shall resolve successfully.                                                                                          |
+| NFR-006 | The website shall provide an accessible reading experience with appropriate colour contrast and semantic structure where practical. |
+| NFR-007 | Build status information shall degrade gracefully when external services are unavailable.                                           |
+
+---
+
+# 10. Test Strategy Mapping
+
+This portfolio intentionally demonstrates professional Quality Engineering practices by maintaining direct traceability between business requirements and automated verification.
+
+Each Business Requirement is expected to be validated through one or more automated Playwright test suites.
+
+The automated test suites collectively verify:
+
+* Website availability
+* User navigation
+* Responsive behaviour
+* Content presentation
+* External integrations
+* Download functionality
+* Live telemetry
+* Accessibility
+* Link integrity
+
+This traceability enables every business capability described within this specification to be continuously verified as part of the website's automated quality pipeline.
+
+---
+
+# 11. Future Enhancements
+
+The following capabilities may be considered for future releases:
+
+* Accessibility compliance reporting
+* Contact form with validation
+* Search capability
+* Blog and technical articles
+* Project case studies
+* Interactive résumé
+* Analytics dashboard
+* Dark/light theme preference
+* Internationalisation
+* Progressive Web App support
+* Performance metrics dashboard
+* AI-powered portfolio assistant
