@@ -90,6 +90,26 @@ Remove-Item Env:TEST_TARGET
 Use `TEST_TARGET=mock` for deterministic local and CI runs. The mock server is
 started automatically for that target and is not started for live runs.
 
+Live Site:
+
+$env:TEST_TARGET = 'live'
+npm test
+Remove-Item Env:TEST_TARGET
+
+Specific Live Test:
+
+$env:TEST_TARGET = 'live'
+npx playwright test tests/live-site.spec.ts
+Remove-Item Env:TEST_TARGET
+
+Override the BaseURL:
+
+$env:TEST_TARGET = 'live'
+$env:BASE_URL = 'https://example.com'
+npm test
+Remove-Item Env:TEST_TARGET
+Remove-Item Env:BASE_URL
+
 ## Notes
 
 - The default test command executes the full suite.
