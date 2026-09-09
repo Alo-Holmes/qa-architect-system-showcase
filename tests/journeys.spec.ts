@@ -27,6 +27,6 @@ test.describe('portfolio journeys', () => {
     const portfolio = new PortfolioPage(page);
 
     await openPortfolio(page);
-    await expectPageContains(page, /telemetry health|build status|healthy/i);
+    await expectPageContains(page, /System Telemetry Monitor|Status: Active & Hydrated/i);
   });
 });
