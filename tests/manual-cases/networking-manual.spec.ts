@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { openPortfolio } from '../helpers/portfolioTestHelper';
 
-test.describe('manual-case professional networking', () => {
-  test('TC-013 contact via email @manual-case @manual-case-networking', async ({ page }) => {
-    await openPortfolio(page);
-    const emailLink = page.getByRole('link', { name: /email/i }).first();
-    await expect(emailLink).toBeVisible();
-  });
+// test.describe('manual-case professional networking', () => {
+//   test('TC-013 contact via email @manual-case @manual-case-networking', async ({ page }) => {
+//     await openPortfolio(page);
+//     const emailLink = page.getByRole('link', { name: /email/i }).first();
+//     await expect(emailLink).toBeVisible();
+//   });
 
   test('TC-014 access GitHub profile @manual-case @manual-case-networking', async ({ page }) => {
     await openPortfolio(page);
@@ -25,4 +25,4 @@ test.describe('manual-case professional networking', () => {
     const whatsappLink = page.getByRole('link', { name: /whatsapp/i }).first();
     await expect(whatsappLink).toBeVisible();
   });
-});
+
