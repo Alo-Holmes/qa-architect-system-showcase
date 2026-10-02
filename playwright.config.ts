@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const testTarget = process.env.TEST_TARGET ?? 'mock';
+const testTarget = process.env.TEST_TARGET ?? 'live';
 if (testTarget !== 'mock' && testTarget !== 'live') {
   throw new Error(`TEST_TARGET must be either "mock" or "live", received "${testTarget}"`);
 }
